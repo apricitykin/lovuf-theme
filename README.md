@@ -1,5 +1,5 @@
 # Lovuf Theme
-a theme focused on minimalistic and see-through approach
+a theme focused on minimalistic and see-through approach (with a few personal touvhups :p)
 
 i hope it's good enough lol
 
