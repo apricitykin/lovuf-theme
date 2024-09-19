@@ -1,0 +1,167 @@
+/* main theme */
+
+@import url("https://raw.githubusercontent.com/Bitslayn/RepluggedAddons/main/themes/btw.bitslayn.inlineStatus/raw/main.css");
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;300;400;500;700&display=swap');
+@import url('https://mwittrien.github.io/BetterDiscordAddons/Themes/BasicBackground/BasicBackground.css');
+@import url('https://discordstyles.github.io/HorizontalServerList/dist/HorizontalServerList.css');
+@import url('https://discordstyles.github.io/RadialStatus/dist/RadialStatus.css');
+@import url(https://mwittrien.github.io/BetterDiscordAddons/Themes/SettingsModal/SettingsModal.css);
+
+:root {
+  --settingswidth: 	1300;
+	--settingsheight: 	85;
+	--settingsbackground: 	transparent;
+  --background: url('https://raw.githubusercontent.com/apricitykin/theme-wallpapers/main/358b696c1c2802e33174d8803dd5e64a(1).jpg');
+  --backgroundsize: cover;
+  --backgroundposition: center;
+  --backgroundblur: 0px;
+  --popout: var(--background);
+  --popoutsize: var(--backgroundsize);
+  --backgroundposition: center;
+  --popoutblur: 0px;
+  --transparencycolor: 0,0,0;
+  --accentcolor: 47,47,47;
+  --backdrop: rgba(0,0,0,0.85);
+  --textshadow: transparent;
+  --transparencyalpha: 0.3;
+  --messagetransparency: 0.38;
+  --guildchanneltransparency: 0.15;
+  --chatinputtransparency: 0;
+  --memberlisttransparency: 0;
+  --font: Lexend;
+  --textbrightest: 255,255,255;
+  --textbrighter: 222,222,222;
+  --textbright: 200,200,200;
+  --textdark: 160,160,160;
+  --textdarker: 125,125,125;
+  --textdarkest: 90,90,90;
+  --settingsicons: 1;
+  --backdropsize: var(--background-size);
+  --backdropblur: 0px;
+  --version1_0_5: none;
+  --HSL-server-icon-size: 30px;
+  --HSL-server-spacing: 10px;
+  --rs-small-spacing: 2px;
+  --rs-medium-spacing: 2px;
+  --rs-large-spacing: 2px;
+  --rs-small-width: 2px;
+  --rs-medium-width: 2px;
+  --rs-large-width: 2px;
+  --rs-avatar-shape: 50%;
+  --rs-online-color: #43b581;
+  --rs-idle-color: #faa61a;
+  --rs-dnd-color: #f04747;
+  --rs-offline-color: #636b75;
+  --rs-streaming-color: #643da7;
+  --rs-phone-visible: block;
+}
+
+/* --------- additional touchups --------- */
+
+
+/* Remove Settings Ads */
+
+div.side_a0 > div.item_a0[data-tab-id="Discord Nitro"] {
+  display: none !important;
+}
+div.side_a0 > div.item_a0[data-tab-id="Nitro Server Boost"] {
+  display: none !important;
+}
+
+/* Match Badges Border Color with Profile Button Color for Custom Profiles */
+
+.custom-profile-theme [aria-label="User Badges"] {
+  border-color: var(--profile-gradient-button-color);
+}
+/* Match Full Size Profile Box Border Color with Profile Button Color for Custom Profiles */
+
+.custom-profile-theme [class^=fullSizeOverlayBackground] {
+  border-color: var(--profile-gradient-button-color)!important;
+}
+/* Add Panel Profile Box Border Color with Profile Button Color for Custom Profiles */
+
+[class^=userPanelInner_] :is([class^=overlayBackground_], [class^=activityBiteSizePopout_]) {
+  border: 1px solid var(--profile-gradient-button-color);
+}
+
+/* Match Profile Scroller with Profile Button Color for Custom Profiles */
+
+.custom-profile-theme [class*=scrollerBase_]::-webkit-scrollbar-thumb {
+  background-color: var(--profile-gradient-button-color);
+}
+
+/* Match Clan Button Color with Profile Button Color for Custom Profiles */
+
+.custom-profile-theme [class^=chipletContainerInner_] {
+  background: var(--profile-gradient-button-color);
+}
+
+/* Match Show More Roles and View Permissions (Permissions Plugin) Border Color with Profile Button Color for Custom Profiles */
+
+.custom-profile-theme :is([class^=expandButton_], [class^=collapseButton_], .vc-permviewer-role-button)  {
+  border-color: var(--profile-gradient-button-color);
+}
+
+/* Add Border to Activities and Match with Profile Button Color for Custom Profiles */
+
+.custom-profile-theme :is([class^=biteSizeOverlayBackground_], [class^=scroller_] [class^=section_] [class*=card_]) {
+  border: 1px solid var(--profile-gradient-button-color)!important;
+}
+
+/* Match Connections Border Color with Profile Button Color for Custom Profiles */
+
+.custom-profile-theme [class^=connectedAccountContainer_] {
+    border-color: var(--profile-gradient-button-color);
+}
+
+[class^=hovered], [class^=hoverRoll][class*=forceHover]:not([class^=disabled]) > [class^=default]
+{
+  opacity: 1!important;
+  transform: none;
+}
+[class^=avatarWrapper_] [class^=nameTag_] [class^=hovered_]::before{
+    content: "@";
+}
+[class^=hoverRoll] > [class^=default]
+{
+  margin-top: 15px;
+}
+
+/*     Visible Server Banner     */
+
+[class^="container_"]:not([class*="bannerVisible_"]) >
+[class^="animatedContainer_"] {
+  top: 3px;
+}
+[class*="animatedContainer_"] {
+  opacity: 1 !important;
+}
+[class*="headerContent_"] {
+  filter: drop-shadow(0 1px 1px var(--bg-backdrop));
+}
+/* AMOLEDCord fix */
+
+[class^="sidebar_"] header {
+  background-color: transparent !important;
+}
+
+[class^=panels] > [class^=container] /* User area redesign */
+{
+    height: unset !important; /* Height being dynamic is fine */
+    align-items: unset !important; /* Don't need that */
+    padding: 6px 8px !important; /* Let those boxes breathe */
+    flex-direction: column-reverse !important; /* instead of going one next to the other, go stacked */
+    gap: 2px !important; /* Again let them breathe */
+}
+
+[class^=avatarWrapper] /* Change the user box */
+{
+    margin-right: unset !important; /* Useless */
+    margin-left: unset !important; /* Useless */
+    padding-left: 4px !important; /* Make it slightly bigger for consistency with the right side */
+}
+
+[class^=container] > [class*=buttons] /* Change the quick actions */
+{
+    justify-content: space-evenly !important; /* Let them breathe */
+}
